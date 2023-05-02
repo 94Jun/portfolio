@@ -33,6 +33,7 @@ const Project = ({ project, parentIdx }) => {
       };
     }
   }, [parentIdx, project]);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{project.name}</h2>
@@ -105,6 +106,7 @@ const Project = ({ project, parentIdx }) => {
               </a>
             </div>
           </div>
+          <div className={styles.empty}></div>
         </div>
       </section>
     </div>

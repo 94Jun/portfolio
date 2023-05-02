@@ -89,36 +89,47 @@ const Projects = () => {
   };
 
   return (
-    <MainContainer>
-      <div className={styles.carousel_container}>
-        <button className={styles.prev_icon} onClick={handlePrevClick} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-          <ArrowBackIosNewIcon fontSize="inherit" color="inherit" />
-        </button>
-        <div className={styles.carousel_wrap}>
-          <div className={styles.carousel} style={{ transform: `translateX(${-100 * visibleIdx}%)` }}>
+    <>
+      <div className={styles.carousel_top_btn}>
+        {projectList.map((project, idx) => {
+          return (
+            <button key={idx} className={`${styles.circle} ${visibleIdx === idx ? styles.circle_active : ""}`} onClick={() => setVisibleIdx(idx)}>
+              {idx + 1}
+            </button>
+          );
+        })}
+      </div>
+      <MainContainer>
+        <div className={styles.carousel_container}>
+          <button className={styles.prev_icon} onClick={handlePrevClick} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+            <ArrowBackIosNewIcon fontSize="inherit" color="inherit" />
+          </button>
+          <div className={styles.carousel_wrap}>
+            <div className={styles.carousel} style={{ transform: `translateX(${-100 * visibleIdx}%)` }}>
+              {projectList.map((project, idx) => {
+                return (
+                  <div key={idx} className={styles.carousel_card}>
+                    <Project project={project} parentIdx={visibleIdx} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <button className={styles.next_icon} onClick={handleNextClick}>
+            <ArrowForwardIosIcon fontSize="inherit" color="inherit" />
+          </button>
+          <div className={styles.carousel_bottom_btn}>
             {projectList.map((project, idx) => {
               return (
-                <div key={idx} className={styles.carousel_card}>
-                  <Project project={project} parentIdx={visibleIdx} />
-                </div>
+                <button key={idx} className={`${styles.circle} ${visibleIdx === idx ? styles.circle_active : ""}`} onClick={() => setVisibleIdx(idx)}>
+                  {idx + 1}
+                </button>
               );
             })}
           </div>
         </div>
-        <button className={styles.next_icon} onClick={handleNextClick}>
-          <ArrowForwardIosIcon fontSize="inherit" color="inherit" />
-        </button>
-        <div className={styles.carousel_btn}>
-          {projectList.map((project, idx) => {
-            return (
-              <button key={idx} className={`${styles.circle} ${visibleIdx === idx ? styles.circle_active : ""}`} onClick={() => setVisibleIdx(idx)}>
-                {idx + 1}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </MainContainer>
+      </MainContainer>
+    </>
   );
 };
 

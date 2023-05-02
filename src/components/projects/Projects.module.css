@@ -17,7 +17,7 @@
   font-size: 32px;
   cursor: pointer;
 }
-.carousel_wrap{
+.carousel_wrap {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -34,11 +34,11 @@
   height: 100%;
   border-radius: 1em;
 }
-.carousel_btn {
+.carousel_bottom_btn {
   position: absolute;
   width: 100%;
   z-index: 100;
-  bottom: 8%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -46,12 +46,22 @@
   align-items: center;
   gap: 20px;
 }
+.carousel_top_btn {
+  position: static;
+  transform: none;
+  margin-top: 10px;
+  margin-bottom: -20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap : 20px;
+}
 .circle {
   width: 20px;
   height: 20px;
   background-color: #fff;
   border-radius: 50%;
-  border : 1px solid #ccc;
+  border: 1px solid #ccc;
   cursor: pointer;
   font-size: 12px;
   display: flex;
@@ -61,18 +71,29 @@
 }
 .circle_active {
   background: linear-gradient(to right, #fda4fa, #60a5fa);
-  color : #fff;
-  font-size : 14px;
+  color: #fff;
+  font-size: 14px;
   transition: 500ms;
 }
 @media (max-width: 800px) {
   .carousel_container {
     padding: 20px 0;
   }
+  .carousel_bottom_btn {
+    display: none;
+  }
+  .carousel_top_btn {
+    display: flex;
+  }
   .prev_icon,
   .next_icon {
     width: 40px;
     font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel_top_btn {
+    margin-bottom: -10px;
   }
 }
 @media (max-width: 450px) {
@@ -83,14 +104,14 @@
     position: absolute;
     top: 50%;
     left: 5%;
-    color : rgba(0, 0, 0, 0.2);
+    color: rgba(200, 200, 200, 0.5);
     z-index: 1;
   }
   .next_icon {
     position: absolute;
     top: 50%;
     right: 5%;
-    color : rgba(0, 0, 0, 0.2);
+    color: rgba(200, 200, 200, 0.5);
     z-index: 1;
   }
 }
