@@ -1,0 +1,93 @@
+.carousel_container {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.prev_icon,
+.next_icon {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+.carousel_wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: 500ms;
+}
+.carousel_card {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+.carousel_btn {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.circle_active {
+  background: linear-gradient(to right, #fda4fa, #60a5fa);
+  color : #fff;
+  font-size : 14px;
+  transition: 500ms;
+}
+@media (max-width: 800px) {
+  .carousel_container {
+    padding: 20px 0;
+  }
+  .prev_icon,
+  .next_icon {
+    width: 40px;
+    font-size: 24px;
+  }
+}
+@media (max-width: 450px) {
+  .carousel_container {
+    padding: 10px;
+  }
+  .prev_icon {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color : #fff;
+    z-index: 1;
+  }
+  .next_icon {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    color : #fff;
+    z-index: 1;
+  }
+}

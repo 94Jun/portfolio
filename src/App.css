@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'GmarketSansMedium';
+}
+li {
+  list-style: none;
+}
+a {
+  color : inherit;
+  text-decoration: none;
+}
+button {
+  border: none;
+  background: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+#wrap {
+  position: relative;
+  width: 140px;
+  aspect-ratio: 3/4;
+  perspective: 500px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#wrap .card {
+  width: 100%;
+  height: 100%;
+  transition: all .5s;
+  transform-style: preserve-3d;
 }
 
-.App-link {
-  color: #61dafb;
+#wrap:hover .card {
+  transform: rotateY(180deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#wrap .card > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border-radius: 20px;
+  backface-visibility: hidden;
+}
+
+#wrap .card .card-front {
+  background-color: #f54;
+  /* z-index: 10; */
+}
+
+#wrap .card .card-back {
+  background-color: #ccc;
+  /* z-index: 5; */
+  transform: rotateY(180deg);
 }

@@ -1,0 +1,34 @@
+.container {
+  height: 100vh;
+  background: url(/public/images/milad-fakurian-PGdW_bHDbpI-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.background_video {
+  position: absolute;
+  top : 0;
+  bottom : 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.glass {
+  height: 95%;
+  width: 95%;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  margin: auto;
+  border-radius: 2em;
+  box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: calc(2% + 10px);
+  display: flex;
+  flex-direction: column;
+}
+

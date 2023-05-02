@@ -1,0 +1,31 @@
+.container {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  animation-name: slide;
+  animation-duration: 500ms;
+  overflow: auto;
+}
+.container::-webkit-scrollbar{
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-top: 20px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
