@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  background: url(/public/images/milad-fakurian-PGdW_bHDbpI-unsplash.jpg);
+  background: url(https://94jun-portfolio.s3.ap-northeast-2.amazonaws.com/images/milad-fakurian-PGdW_bHDbpI-unsplash.jpg);
   background-position: center;
   background-size: cover;
   position: relative;

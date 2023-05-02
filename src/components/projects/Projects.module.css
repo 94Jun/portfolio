@@ -36,6 +36,8 @@
 }
 .carousel_btn {
   position: absolute;
+  width: 100%;
+  z-index: 100;
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
@@ -49,6 +51,7 @@
   height: 20px;
   background-color: #fff;
   border-radius: 50%;
+  border : 1px solid #ccc;
   cursor: pointer;
   font-size: 12px;
   display: flex;
@@ -80,14 +83,14 @@
     position: absolute;
     top: 50%;
     left: 5%;
-    color : #fff;
+    color : rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
   .next_icon {
     position: absolute;
     top: 50%;
     right: 5%;
-    color : #fff;
+    color : rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
 }

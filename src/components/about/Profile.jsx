@@ -8,7 +8,7 @@ const Profile = ({ skillList }) => {
       <div className={styles.left}>
         <div className={styles.info}>
           <div className={styles.profile}>
-            <img src="/images/profile_2.png" />
+            <img src="https://94jun-portfolio.s3.ap-northeast-2.amazonaws.com/images/profile_2.png" />
           </div>
           <div className={styles.name}>
             <p>웹 개발자</p>
