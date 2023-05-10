@@ -116,13 +116,13 @@
 .logo_container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 80px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
   row-gap: 10px;
   align-items: center;
   justify-content: center;
 }
 .logo {
-  width: 60px;
+  width: 70px;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: flex-end;
@@ -145,9 +145,21 @@
   .container{
     margin-right : 20px;
   }
+  .logo_container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 80px));
+  }
+  .logo {
+    width: 60px;
+  }
 }
 @media (max-width : 800px){
   .container{
     display: block;
+  }
+  .info{
+    width: 100%;
+    margin-top : -10px;
+    margin-bottom : 20px;
+    margin-left : 10px;
   }
 }

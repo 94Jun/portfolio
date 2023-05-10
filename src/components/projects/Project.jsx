@@ -2,9 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Project.module.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-const Project = ({ project, parentIdx }) => {
+import { useDispatch } from "react-redux";
+import { modalActions } from "../../store/modalSlice";
+const Project = ({ project, parentIdx, idx }) => {
+  const dispatch = useDispatch();
   const [visibleIdx, setVisibleIdx] = useState(0);
   const interval = useRef();
+
   const handlePrevClick = () => {
     if (visibleIdx !== 0) {
       setVisibleIdx((prev) => prev - 1);
@@ -16,9 +20,9 @@ const Project = ({ project, parentIdx }) => {
       setVisibleIdx((prev) => prev + 1);
     }
   };
+
   useEffect(() => {
-    setVisibleIdx(0);
-    if (project.images?.length > 1) {
+    if (project.images?.length > 1 && parentIdx === idx) {
       interval.current = setInterval(() => {
         setVisibleIdx((prev) => {
           if (prev !== project.images?.length - 1) {
@@ -32,8 +36,8 @@ const Project = ({ project, parentIdx }) => {
         clearInterval(interval.current);
       };
     }
-  }, [parentIdx, project]);
-
+  }, [parentIdx, project, visibleIdx]);
+  
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{project.name}</h2>
@@ -43,9 +47,16 @@ const Project = ({ project, parentIdx }) => {
             <div className={styles.carousel}>
               {project.images?.map((img, idx) => {
                 return (
-                  <div key={idx} className={styles.img_wrap} style={{ transform: `translateX(-${visibleIdx * 100}%)` }}>
+                  <a
+                    href={img}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={idx}
+                    className={styles.img_wrap}
+                    style={{ transform: `translateX(-${visibleIdx * 100}%)` }}
+                  >
                     <img src={img} alt={img} />
-                  </div>
+                  </a>
                 );
               })}
             </div>
@@ -97,12 +108,12 @@ const Project = ({ project, parentIdx }) => {
           <div className={styles.url}>
             <h4>URL</h4>
             <div className={styles.url_wrap}>
-              {/* <p>상세 보기</p> */}
+              {idx === 0 && <p onClick={() => dispatch(modalActions.OPEN_MODAL(project.name))}>상세 보기</p>}
               <a href={project.url} target="_blank" rel="noreferrer">
-                프로젝트 바로가기
+                프로젝트 페이지
               </a>
               <a href={project.github} target="_blank" rel="noreferrer">
-                깃허브 바로가기
+                깃허브
               </a>
             </div>
           </div>

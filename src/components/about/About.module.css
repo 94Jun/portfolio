@@ -23,7 +23,7 @@
 }
 .active::after {
   content: "";
-  width: 80%;
+  width: 70px;
   border-bottom: 1px solid black;
   position: absolute;
   bottom: -5px;
@@ -67,7 +67,6 @@
     text-align: center;
   }
   .active::after {
-    width: 30%;
     margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);

@@ -2,13 +2,14 @@ import styles from "./Profile.module.css";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import profile from "../../assets/images/profile_2.png";
 const Profile = ({ skillList }) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.info}>
           <div className={styles.profile}>
-            <img src="https://94jun-portfolio.s3.ap-northeast-2.amazonaws.com/images/profile_2.png" />
+            <img src={profile} />
           </div>
           <div className={styles.name}>
             <p>웹 개발자</p>

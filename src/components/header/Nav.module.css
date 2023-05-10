@@ -12,3 +12,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width : 500px){
+  .item{
+    font-size: 14px;
+    padding : 6px 12px;
+  }
+}

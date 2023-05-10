@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
 import Nav from "./Nav";
+import profile from "../../assets/images/profile_2.png";
 const Links = [
   {
     name: "About",
@@ -15,7 +16,7 @@ const Header = () => {
     <div className={styles.container}>
       <div className={styles.title}>
         <div className={styles.profile}>
-          <img src="https://94jun-portfolio.s3.ap-northeast-2.amazonaws.com/images/profile.jpeg" />
+          <img src={profile} />
         </div>
         <p>
           <span>Web Deveolper</span>

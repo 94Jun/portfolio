@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "./MainContainer.module.css";
 const MainContainer = ({ children }) => {
   return (
